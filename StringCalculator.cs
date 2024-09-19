@@ -6,7 +6,7 @@ public class StringCalculator
     {
         if (checkNullString(input))
             return 0;
-        var numberlist = input;
+        var numberlist = inputDecoder(input);
         return numberlist;
     }
 
@@ -26,5 +26,19 @@ public class StringCalculator
         string[] numberStrings = numbers.Split(delimiters, StringSplitOptions.None);
         return getNumberList(numberStrings);
     }
-
+      private static List<int> getNumberList(string[] numberStrings)
+    {
+        var numberList = new List<int>();
+        foreach (var numberString in numberStrings)
+        {
+            if (int.TryParse(numberString, out int number))
+            {
+                if (number <= 1000)
+                {
+                    numberList.Add(number);
+                }
+            }
+        }
+        return numberList;
+    }
 }
