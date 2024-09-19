@@ -6,6 +6,8 @@ public class StringCalculator
     {
         if (checkNullString(input))
             return 0;
+        var numberlist = input;
+        return numberlist;
     }
 
   private static bool checkNullString(string input)
