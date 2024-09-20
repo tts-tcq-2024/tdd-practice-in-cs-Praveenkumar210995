@@ -32,21 +32,7 @@ public class StringCalculator
         }
         return negativeNumbers;
     }
-    private static List<int> inputDecoder(string numbers)
-    {
-        string[] delimiters = new string[] { ",", "\n" };
-        if (numbers.StartsWith("//"))
-        {
-            int delimiterIndex = numbers.IndexOf('\n');
-            string customDelimiter = numbers.Substring(2, delimiterIndex - 2);
-            delimiters = new string[] { customDelimiter };
-            numbers = numbers.Substring(delimiterIndex + 1);
-        }
 
-        string[] numberStrings = numbers.Split(delimiters, StringSplitOptions.None);
-
-        return getNumberList(numberStrings);
-    }
 
     private static List<int> getNumberList(string[] numberStrings)
     {
